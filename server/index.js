@@ -8,6 +8,7 @@ app.use(express.json());
 db.serialize(() => {
 
 	db.run('CREATE TABLE test (id INTEGER PRIMARY KEY, name TEXT)');
+	db.run('INSERT INTO test (name) VALUES ($1)', ["test"]);
 
 });
 
