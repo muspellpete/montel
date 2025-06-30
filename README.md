@@ -18,3 +18,8 @@ Environment displays inferred types inline, supports auto-completion etc.
 Lazygit is used for interfacing with Git, highly recommended!
 
 ![image](https://github.com/user-attachments/assets/254ff88b-3bc8-4428-a55d-91458c1dbfba)
+
+Rider was used primarily to access GitHub Copilot, which was handy for learning some of
+the React specifics like useState and useEffect:
+
+![image](https://github.com/user-attachments/assets/c36fa03f-a242-4040-9a9f-517742b79482)
