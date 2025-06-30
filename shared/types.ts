@@ -14,7 +14,9 @@ export interface Car {
 	id: number;
 	type: CarType;
 	registration: string; // Registration number of the car
-	currentlyBooked: boolean; // Only one person can book a car at a time (hopefully never changes)
+	
+	// Safer to check the booking state elsewhere that duplicate the state to the car itself
+	// currentlyBooked: boolean; // Only one person can book a car at a time (hopefully never changes)
 }
 
 /**
