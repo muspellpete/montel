@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {Booking, Car} from '../shared/types';
+import Header from './Header';
 import './App.css';
 
 function App() {
@@ -41,7 +42,9 @@ function App() {
 
   return (
 
-	  <div><table><tbody>
+	  <div>
+	  <Header />
+	  <table><tbody>
 	  
 	  {
 		  cars.map(([car, available]) => <tr key={car.id}>
@@ -52,7 +55,6 @@ function App() {
 	  }
 
 	  </tbody></table></div>
-
   );
 }
 
