@@ -27,4 +27,5 @@ export interface Booking {
 	bookingNumber: string;
 	car: Car;
 	ssn: string; // Customer social security number
+	active: boolean; // If the booking is still active or has been finished (simplifying adding dates etc)
 }
