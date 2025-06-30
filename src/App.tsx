@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Booking, Car} from '../shared/types';
 import Header from './Header';
+import CarReturn from './CarReturn';
 import './App.css';
 
 function App() {
@@ -54,6 +55,8 @@ function App() {
 			</tr>)
 	  }
 
+	  <CarReturn />
+
 	  </tbody></table></div>
   );
 }
@@ -78,7 +81,7 @@ function handleBooking(car: Car) {
 			})
 			.then(response => response.json())
 			.then(booking => {
-				alert(`Booking successful! Booking ID: ${booking.id}`);
+				alert(`Booking successful! Booking number: ${bookingNumber}`);
 			})
 			.catch(error => {
 				console.error('Error booking the car:', error);

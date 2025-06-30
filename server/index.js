@@ -90,7 +90,7 @@ app.post('/booking', (req, res) => {
 
 // Finish booking by updating the booking with the given booking number
 app.put('/booking', (req, res) => {
-	const booking_number = req.body;
+	const booking_number = req.query.bookingNumber;
 
 	if (!booking_number) {
 		return res.status(400).json({ error: 'Missing booking number' });
@@ -102,6 +102,18 @@ app.put('/booking', (req, res) => {
 			return res.status(500).json({ error: err.message });
 		}
 		res.status(200).json({ message: 'Booking updated successfully' });
+	});
+	
+	statement.finalize();
+})
+
+app.delete('/clear_all_booking', (req, res) => {
+	const statement = db.prepare('DELETE FROM booking');
+	statement.run(function(err) {
+		if (err) {
+			return res.status(500).json({ error: err.message });
+		}
+		res.status(200).json({ message: 'All bookings cleared successfully' });
 	});
 	
 	statement.finalize();
