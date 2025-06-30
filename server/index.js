@@ -61,7 +61,7 @@ app.get('/cars', (_, res) => {
 
 // Get all bookings for a specific car based on registration number
 app.get('/booking', (req, res) => {
-	db.all('SELECT * FROM booking WHERE car(registration) EQUALS ?', [req.body], (err, rows) => {
+	db.all('SELECT booking.* FROM booking JOIN car ON car.id = booking.car_id WHERE car.registration = ?', [req.query.registration], (err, rows) => {
 		if(err) {
 			return res.status(500).json({error: err.message});
 		}
